@@ -1,0 +1,26 @@
+/**
+* Configuration for the compilation from typescript (in ./src/**) to js (in ./dist/**)
+* @see https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+*/
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "node20",
+    "outDir": "dist",
+    "sourceMap": true,
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"]
+    },
+
+    // Compiler options
+    "strict": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/*.spec.ts", "**/*.test.ts"],
+}

@@ -1,0 +1,11 @@
+# For ignoring sensitive files like .env
+# @see https://www.w3schools.com/git/git_ignore.asp
+
+# Dont save all the modules on git
+node_modules/
+
+# Dont save builds
+dist/
+
+# sensitive variables like db user and password
+*.env
