@@ -1,6 +1,5 @@
 import { config } from "dotenv";
 import { startServer } from "./server";
-import { getDb } from "./database";
 
 /**
  * Initialize the .env config file

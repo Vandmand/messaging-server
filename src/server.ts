@@ -1,9 +1,6 @@
 import express from "express";
-import usersNew from "./routes/users/usersNew";
-import usersLogin from "./routes/users/usersLogin";
-import usersLogout from "./routes/users/usersLogout";
-import messagesIndex from "./routes/messages/messagesIndex";
-import messageNew from "./routes/messages/messageNew";
+import routes from "./routes/routes";
+
 const app = express();
 
 const port = process.env.PORT || 6969;
@@ -15,14 +12,17 @@ app.get("/", (req, res) => {
 });
 
 // User endpoints
-app.post("/users/new", usersNew);
-app.post("/users/login", usersLogin);
-app.post("/users/logout", usersLogout);
+app.post("/users/new", routes.users.new);
+app.post("/users/login", routes.users.login);
+app.post("/users/logout", routes.users.logout);
 
 // Message endpoints
-app.get("/messages", messagesIndex);
-app.post("/messages/new", messageNew);
+app.get("/messages", routes.messages.index);
+app.post("/messages/new", routes.messages.new);
 
+/**
+ * Starts the server
+ */
 const startServer = () => {
   app.listen(port, () => {
     console.log("Server started");
